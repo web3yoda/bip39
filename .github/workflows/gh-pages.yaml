@@ -20,7 +20,9 @@ jobs:
         with:
           node-version: '18'
       - name: Install the dependencies
-        run: npm install
+        run: |
+          apt install -y build-essential libvips-dev
+          npm install
       - name: Build
         run: npm build
       - name: Upload artifact
